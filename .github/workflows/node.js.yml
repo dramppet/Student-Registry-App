@@ -27,7 +27,7 @@ jobs:
 
   build_test:
     runs-on: ubuntu-latest
-
+    needs: security_tests
     steps:
     - name: Clone the GitHub repository on the machine
       uses: actions/checkout@v4
