@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-     fail-fast: true
+      fail-fast: true
       matrix:
         node-version: [18.x, 20.x, 22.x]
 
@@ -29,3 +29,23 @@ jobs:
       run: npm run start &
     - name: Run Integration tests
       run: npm run test
+
+  security_tests:
+   runs-on: ubuntu-lates
+
+   steps:
+    - name: Clone the GitHub repository on the machine
+      uses: actions/checkout@v4
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 
+        cache: 'npm'
+    - name: Install program dependencies
+      run: npm install
+
+    - name: Start the app
+      run: npm run start &
+
+    - name: Run Integration tests
+      run: npm audit
