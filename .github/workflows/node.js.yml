@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_test:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +21,4 @@ jobs:
     - name: Install program dependencies
       run: npm install
     - name: Run Integration tests
-    - run: npm run test
+      run: npm run test
