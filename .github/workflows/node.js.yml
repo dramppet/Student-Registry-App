@@ -7,8 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  
-  security_tests:
+    security_tests:
 
   build_test:
     runs-on: ubuntu-latest
